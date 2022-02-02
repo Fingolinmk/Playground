@@ -49,4 +49,5 @@ out/
 
 # End of https://www.toptal.com/developers/gitignore/api/platformio,kicad
 
-
+Code/Light/include/secrets.h
+Code/Remote/include/secrets.h
