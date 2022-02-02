@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,10 +32,12 @@
             These command can be triggered using for example a simple Node-Red Dashboard, which can be accessed with any
             browser.
         </p>
-        <div class="polaroid">
-            <img src="img/IMG_20220131_184430_Bokeh.jpg" alt="The Light" style="width:100%">
-            <div class="container">
-                <p>The Light</p>
+        <div class="slideshow-container">
+            <div class="polaroid">
+                <img src="img/IMG_20220131_184430_Bokeh.jpg" alt="The Light" style="width:100%">
+                <div class="container">
+                    <p>The Light</p>
+                </div>
             </div>
         </div>
 
@@ -46,20 +49,34 @@
         </p>
 
 
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="polaroid">
+                    <div class="numbertext">1 / 2</div>
+                    <img src="img/pcb.jpg" alt="The PCB" style="width:100%">
+                    <div class="container">
+                        <p>The PCB</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="polaroid">
-            <img src="img/pcb.jpg" alt="The Light" style="width:100%">
-            <div class="container">
-                <p>The PCB</p>
+            <div class="mySlides fade">
+                <div class="polaroid">
+                    <div class="numbertext">2 / 2</div>
+                    <img src="img/PCB's.jpg" alt="Manufactured PCB's" style="width:100%">
+                    <div class="container">
+                        <p>Manufactured PCB's</p>
+                    </div>
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
             </div>
         </div>
 
-        <div class="polaroid">
-            <img src="img/PCB's.jpg" alt="The Light" style="width:100%">
-            <div class="container">
-                <p>Manufactured PCB's</p>
-            </div>
-        </div>
 
         <h2 id="Firmware">Firmware</h2>
         <p>Programming the device requires an FT232, since I saved the space on the pcb for it.
@@ -77,7 +94,8 @@
         <div class="content">
             <p>"light" : "rgb(R, G, B)"" : Sets the color to R,G,B for the whole lamp</p>
             <p>"light" : "random": sets a random color pattern for the lamp</p>
-            <p>"light" : "Sparkel": Lets the lamp sparkel in a random pattern for the time provided by the timer</p>
+            <p>"light" : "Sparkel": Lets the lamp sparkel in a random pattern for the time provided by the timer
+            </p>
             <p> "light/timer" : "x" : sets the timer for Fadeout and for sparkel in minutes</p>
             <p> "light/Alert/Status" : "true/false" : enables the alert, that has been specified by </p>
             <p> "light/Alert/Time : "{"hour":2,"minute":3}" : Sets the time of the alert</p>
