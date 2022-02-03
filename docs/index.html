@@ -21,7 +21,7 @@
         <h1 id="Light"> Light</h1>
         <h2> Introduction</h2>
         <p>
-            This poroject is a demo using a simple "IoT Stack" to play with various technologies.
+            This project is a demo to play with various technologie, such as µC Programming, MQTT, Node-Red.
             Therefore I created a light that is based on an ESP32, programmed with Arduino/PlatformIO.
             This lamp has three "panels" with 24 LED's, totaling 72 LEDs. All LED's are WS2812 and are therefore
             individually adressable.
@@ -50,9 +50,29 @@
 
 
         <div class="slideshow-container">
+
             <div class="mySlides fade">
                 <div class="polaroid">
-                    <div class="numbertext">1 / 2</div>
+                    <div class="numbertext">1 / 4</div>
+                    <img src="img/circuit.png" alt="Circuit" style="width:100%">
+                    <div class="container">
+                        <p>The Circuit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="polaroid">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="img/Layout.png" alt="Circuit" style="width:100%">
+                    <div class="container">
+                        <p>The Layout</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="polaroid">
+                    <div class="numbertext">3 / 4</div>
                     <img src="img/pcb.jpg" alt="The PCB" style="width:100%">
                     <div class="container">
                         <p>The PCB</p>
@@ -62,18 +82,21 @@
 
             <div class="mySlides fade">
                 <div class="polaroid">
-                    <div class="numbertext">2 / 2</div>
+                    <div class="numbertext">4 / 4</div>
                     <img src="img/PCB's.jpg" alt="Manufactured PCB's" style="width:100%">
                     <div class="container">
                         <p>Manufactured PCB's</p>
                     </div>
                 </div>
             </div>
+
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
             <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
             </div>
         </div>
 
