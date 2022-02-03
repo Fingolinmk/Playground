@@ -43,4 +43,28 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-} 
+}
+var LastElm = "Undefined";
+$(window).scroll(function () {
+    var position = $(this).scrollTop();
+    $('.header').each(function () {
+        var target = $(this).offset().top;
+        var id = $(this).attr('id');
+        if (id) {
+            if (position >= target) {
+                console.log()
+                if (LastElm !== "Undefined") {
+                    console.log(LastElm)
+                    if (LastElm.classList.contains('sidenav_a_active'))
+                        LastElm.classList.remove("sidenav_a_active")
+                }
+                console.log(id + "_ref")
+                elm = document.getElementById(id + "_ref")
+                elm.classList.add("sidenav_a_active")
+                LastElm = elm;
+            }
+
+
+        }
+    });
+});

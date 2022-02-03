@@ -1,12 +1,28 @@
+:root {
+  --background-color:#D2D6EF;
+  --second-background-color:#A2A3B1;
+  --textColor1:#104547;
+  --textColor2:#4B5358;
+  --shade:#BABDD0;
+  --shade2:#727072;
+  --accent:#b481b4;
+
+}
+
+.header {
+  color: var(--textColor1);
+} 
+
 body {
     margin:0;
-    background-color: lightgray;
-    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    font-family: 'Helvetica', sans-serif;
+    color: var(--textColor2);
 }
 
 div.polaroid {
     width: 100%;
-    background-color: rgba(220, 220, 220, 0.918);
+    background-color: var(--shade);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     border-radius: 4px;
@@ -25,7 +41,7 @@ div.polaroid {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: rgb(120, 120, 120); 
+    background-color: var(--second-background-color);
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
   }
@@ -35,10 +51,18 @@ div.polaroid {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: #000000;
+    color:var(--textColor1);
     display: block;
   }
-  
+  .sidenav_a_active {
+    padding: 8px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color:var(--accent);
+    color:var(--textColor2);
+    display: block;
+  }
+
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
     color: #f1f1f1;
@@ -57,8 +81,7 @@ div.polaroid {
   } 
 
   .collapsible {
-    background-color: #777;
-    color: white;
+    background-color: var(--shade);
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -69,7 +92,7 @@ div.polaroid {
   }
   
   .active, .collapsible:hover {
-    background-color: #555;
+    background-color: var(--second-background-color);
   }
   
   .content {
@@ -152,7 +175,7 @@ div.polaroid {
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: var(--accent);
 }
 
 /* Fading animation */
