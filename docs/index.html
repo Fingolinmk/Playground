@@ -12,14 +12,14 @@
 
 <body>
     <div class="sidenav">
-        <a href="#Light">Light</a>
-        <a href="#Hardware">Hardware</a>
-        <a href="#Firmware">Firmware</a>
-        <a href="#Software">Software</a>
+        <a href="#Introduction" id="Introduction_ref">Introduction</a>
+        <a href="#Hardware" id="Hardware_ref">Hardware</a>
+        <a href="#Firmware" id="Firmware_ref">Firmware</a>
+        <a href="#Software" id="Software_ref">Software</a>
     </div>
     <div class="main">
-        <h1 id="Light"> Light</h1>
-        <h2> Introduction</h2>
+        <h1 class="header"> Light</h1>
+        <h2 id="Introduction" class="header"> Introduction</h2>
         <p>
             This project is a demo to play with various technologie, such as µC Programming, MQTT, Node-Red.
             Therefore I created a light that is based on an ESP32, programmed with Arduino/PlatformIO.
@@ -29,7 +29,8 @@
             <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol">NTP</a>.
 
             The device can be controlled via custom <a href="https://en.wikipedia.org/wiki/MQTT">MQTT</a> commands.
-            These command can be triggered using for example a simple Node-Red Dashboard, which can be accessed with any
+            These command can be triggered using for example a simple Node-Red Dashboard, which can be accessed with
+            any
             browser.
         </p>
         <div class="slideshow-container">
@@ -42,7 +43,8 @@
         </div>
 
         <p>
-        <h2 id="Hardware"> Hardware</h2>
+
+        <h2 id="Hardware" class="header"> Hardware</h2>
         <p>The PCB has been manufactured by <a href="https://jlcpcb.com/ ">jlcpcb</a> and was designed in <a
                 href="https://easyeda.com/">EasyEDA</a>.
             I am planning to move the schematics and the layout to KiCad in the future.
@@ -101,7 +103,7 @@
         </div>
 
 
-        <h2 id="Firmware">Firmware</h2>
+        <h2 id="Firmware" class="header">Firmware</h2>
         <p>Programming the device requires an FT232, since I saved the space on the pcb for it.
             The device must be put into programming mode, therefore GPIO0 has to be LOW, see <a
                 href="https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/boot-mode-selection.html">docs.espressif.com/</a>
@@ -111,18 +113,28 @@
         <h3>Alert</h3>
         <h3>Flicker</h3>
 
-        <h2 id="Software">Software</h2>
+        <h2 id="Software" class="header">Software</h2>
 
         <button type="button" class="collapsible">MQTT Commands</button>
         <div class="content">
-            <p><code>light</code> : "rgb(R, G, B)"" : Sets the color to R,G,B for the whole lamp</p>
-            <p><code>light</code> : "random": sets a random color pattern for the lamp</p>
-            <p><code>light</code> : "Sparkel": Lets the lamp sparkel in a random pattern for the time provided by the
-                timer
+            <p>The pattern for the MQTT Commands are:</p>
+            <p><code>topic</code>: <code>command</code>, then an example plus description</p>
+            <p><code>light</code> : <code>rgb(R:INT, G:INT, B:INT)</code>,
+                Example:<code>light - "rgb(255,0,0)"</code>
+                sets the lamp to red. The colors are R(ed),G(reen), and B(lue). The colors can be 0-255</p>
+            <p><code>light</code> : <code>random</code>, Example:<code>light - "random"</code> sets a random color
+                pattern for the lamp</p>
+            <p><code>light</code> : <code>Sparkel</code>, Example:<code>light - "Sparkel"</code>. Lets the lamp
+                sparkel
+                in a random pattern for the time
+                provided by the timer
             </p>
-            <p><code>light/timer</code> : "x" : sets the timer for Fadeout and for sparkel in minutes</p>
+            <p><code>light/timer</code> : <code>"time_in_mins"</code> : <code>light/timer - "10"</code>. Sets the
+                timer
+                for fadeout and for sparkel to 10 minutes</p>
             <p><code>light/Alert/Status</code> : "true/false" : enables the alert, that has been specified by </p>
-            <p><code>light/Alert/Time</code> "light/Alert/Time : "{"hour":2,"minute":3}" : Sets the time of the alert
+            <p><code>light/Alert/Time</code> "light/Alert/Time : "{"hour":2,"minute":3}" : Sets the time of the
+                alert
             </p>
         </div>
         <p>
@@ -140,7 +152,7 @@
 
     </div>
 </body>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 
 </html>
