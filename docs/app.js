@@ -82,11 +82,14 @@ async function insertCode(url1, id) {
     //     .replaceAll(/"/g, '&quot;')
     //     .replaceAll(/'/g, '&#x27;')
     //     .replaceAll("\n", "<br/>");
+    console.log(document.getElementById(id))
     document.getElementById(id).innerHTML = Prism.highlight(data, Prism.languages.clike, 'clike');
 
 }
 
+insertCode("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp", "includeContent");
+/*
 window.addEventListener("load", async (_) => {
-    await insertCode("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp", "includeContent");
-    console.log("Alle Ressourcen haben das Laden beendet!");
+    await 
 });
+*/

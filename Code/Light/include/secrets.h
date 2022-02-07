@@ -1,3 +1,3 @@
-const char *ssid = "Vodafone-978B";
-const char *password = "6uhuUG8bM8b3huHD";
-const char *mqtt_server = "192.168.178.98";
+const char *ssid = "SECRET_SSID";
+const char *password = "SECRET_WIFI_PW";
+const char *mqtt_server = "MQTT.ADDRESS";
