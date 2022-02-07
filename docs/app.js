@@ -88,13 +88,11 @@ async function insertCode(url1, id, tabName) {
 
                 if (!element.className.includes(" active"))
                     element.className += " active";
-                else
-                    console.log("already active")
+
 
             }
             else {
                 element.className = element.className.replace(" active", "");
-                console.log(element.className)
             }
         }
     });
