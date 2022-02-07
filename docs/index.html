@@ -7,10 +7,14 @@
     <title>ESP32 Playground </title>
     <link rel="stylesheet" href="styles.css">
 
+    <link rel="stylesheet" href="vendor/prism.css" data-noprefix />
+
 </head>
 
 
 <body>
+
+
     <div class="sidenav">
         <a href="#Introduction" id="Introduction_ref">Introduction</a>
         <a href="#Hardware" id="Hardware_ref">Hardware</a>
@@ -114,7 +118,10 @@
         <h3>Flicker</h3>
 
         <h2 id="Software" class="header">Software</h2>
-
+        <pre>
+            <code id="includeContent" class="language-clike">
+            </code>
+        </pre>
         <button type="button" class="collapsible">MQTT Commands</button>
         <div class="content">
             <p>The pattern for the MQTT Commands are:</p>
@@ -151,8 +158,10 @@
         </div>
 
     </div>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/prism.js"></script>
+    <script src="app.js"></script>
 </body>
-<script src="vendor/jquery.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
+
 
 </html>

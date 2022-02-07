@@ -52,13 +52,10 @@ $(window).scroll(function () {
         var id = $(this).attr('id');
         if (id) {
             if (position >= target) {
-                console.log()
                 if (LastElm !== "Undefined") {
-                    console.log(LastElm)
                     if (LastElm.classList.contains('sidenav_a_active'))
                         LastElm.classList.remove("sidenav_a_active")
                 }
-                console.log(id + "_ref")
                 elm = document.getElementById(id + "_ref")
                 elm.classList.add("sidenav_a_active")
                 LastElm = elm;
@@ -68,3 +65,24 @@ $(window).scroll(function () {
         }
     });
 });
+async function insertCode(url1, id) {
+    console.log("insert code")
+    const response = await fetch(url1);
+    const data = await response.text();
+    elm = document.getElementById(id);
+    // lines = data.split("\n")
+    // console.log(lines)
+    const formattedData = data
+        .replaceAll(/&/g, '&amp;')
+        .replaceAll(/</g, '&lt;')
+        .replaceAll(/>/g, '&gt;')
+        .replaceAll(/"/g, '&quot;')
+        .replaceAll(/'/g, '&#x27;')
+        .replaceAll("\n", "<br>")
+    elm.innerHTML = formattedData
+
+}
+window.addEventListener("load", function (event) {
+    console.log("Alle Ressourcen haben das Laden beendet!");
+});
+insertCode("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp", "includeContent");
