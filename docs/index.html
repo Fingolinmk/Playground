@@ -114,19 +114,16 @@
 
         <h2 id="Software" class="header">Software</h2>
 
-        <div class="tab">
-            <button class="tablinks" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp'
-                , 'includeContent' )">main.cpp
-            </button>
-            <button class="tablinks" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp'
-                , 'includeContent' )">main.cpp
-            </button>
-            <button class="tablinks" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp'
-                , 'includeContent' )">main.cpp
-            </button>
+        <div class="tab" , id="code_tabs">
+            <button class="tablink" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp'
+                , 'includeContent','main.cpp' )">main.cpp</button>
+            <button class="tablink" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/lib/helper/src/helper.h'
+                , 'includeContent','helper.h' )">helper.h</button>
+            <button class="tablink" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/lib/helper/src/rgb_lighthelper.h'
+                , 'includeContent','rgb_lighthelper.h' )">rgb_lighthelper.h</button>
         </div>
-        <div id="London" class="tabcontent">
-            <pre><code id="includeContent" class="language-clike"></code></pre>
+        <div>
+            <pre><code id="includeContent" class="language-clike">TEST</code></pre>
         </div>
         <button type="button" class="collapsible">MQTT Commands</button>
         <div class="content">

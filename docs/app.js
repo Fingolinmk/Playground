@@ -71,25 +71,38 @@ $(window).scroll(function () {
     });
 });
 
-async function insertCode(url1, id) {
-    console.log("insert code")
+async function insertCode(url1, id, tabName) {
+
     const response = await fetch(url1);
     const data = await response.text();
-    // const code = data
-    //     .replaceAll(/&/g, '&amp;')
-    //     .replaceAll(/</g, '&lt;')
-    //     .replaceAll(/>/g, '&gt;')
-    //     .replaceAll(/"/g, '&quot;')
-    //     .replaceAll(/'/g, '&#x27;')
-    //     .replaceAll("\n", "<br/>");
-    console.log(document.getElementById(id))
+
     document.getElementById(id).innerHTML = Prism.highlight(data, Prism.languages.clike, 'clike');
 
+    //styling
+    const tabs = document.getElementById("code_tabs");
+    tabs.childNodes.forEach(element => {
+        if (element.className === "tablink" || element.className === "tablink active") {
+
+            element.className.replace(" active", "");
+            if (element.innerHTML == tabName) {
+
+                if (!element.className.includes(" active"))
+                    element.className += " active";
+                else
+                    console.log("already active")
+
+            }
+            else {
+                element.className = element.className.replace(" active", "");
+                console.log(element.className)
+            }
+        }
+    });
 }
 
-insertCode("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp", "includeContent");
-/*
+
 window.addEventListener("load", async (_) => {
-    await 
+    await
+        insertCode("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp", "includeContent", "main.cpp");
 });
-*/
+
