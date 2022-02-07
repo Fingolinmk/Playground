@@ -107,13 +107,7 @@
             The device must be put into programming mode, therefore GPIO0 has to be LOW, see <a
                 href="https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/boot-mode-selection.html">docs.espressif.com/</a>
         </p>
-        <h3>RGB Control</h3>
-        <h3>Sleep Timer</h3>
-        <h3>Alert</h3>
-        <h3>Flicker</h3>
-
-        <h2 id="Software" class="header">Software</h2>
-
+        You can find the most relevant parts of the code below (a description will follow).
         <div class="tab" , id="code_tabs">
             <button class="tablink" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp'
                 , 'includeContent','main.cpp' )">main.cpp</button>
@@ -122,9 +116,18 @@
             <button class="tablink" onclick="insertCode('https:\/\/raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/lib/helper/src/rgb_lighthelper.h'
                 , 'includeContent','rgb_lighthelper.h' )">rgb_lighthelper.h</button>
         </div>
-        <div>
+        <br>
+        <div style="overflow-y: scroll; max-height:700px;">
             <pre><code id="includeContent" class="language-clike">TEST</code></pre>
         </div>
+        <h3>RGB Control</h3>
+        <h3>Sleep Timer</h3>
+        <h3>Alert</h3>
+        <h3>Flicker</h3>
+
+        <h2 id="Software" class="header">Software</h2>
+
+        
         <button type="button" class="collapsible">MQTT Commands</button>
         <div class="content">
             <p>The pattern for the MQTT Commands are:</p>
