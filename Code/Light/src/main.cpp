@@ -158,37 +158,14 @@ void setColor(uint8_t r, uint8_t g, uint8_t b)
 }
 void toggle()
 {
+  toggle_RGB(colorMatrix1, NUMPIXELS, R, G, B);
+  toggle_RGB(colorMatrix2, NUMPIXELS, R, G, B);
+  toggle_RGB(colorMatrix3, NUMPIXELS, R, G, B);
 
-  rgb color = rgb(R, G, B);
-
-  for (size_t i = 0; i < NUMPIXELS; i++)
-  {
-    if (colorMatrix1[i] == color.get_packedRGB())
-    {
-      colorMatrix1[i] = OFF;
-    }
-    else
-      colorMatrix1[i] = color.get_packedRGB();
-
-    if (colorMatrix2[i] == color.get_packedRGB())
-    {
-      colorMatrix2[i] = OFF;
-    }
-    else
-      colorMatrix2[i] = color.get_packedRGB();
-
-    if (colorMatrix3[i] == color.get_packedRGB())
-    {
-      colorMatrix3[i] = OFF;
-    }
-    else
-      colorMatrix3[i] = color.get_packedRGB();
-  }
   show();
 }
 void fadeOutNew()
 {
-
   Serial.println("FadeOut");
   int del_t = 0;
   // Calculate how many steps it will take to go to zero for each matrix
@@ -214,7 +191,6 @@ void fadeOutNew()
 
   del_t = fadeoutTime / steps;
   Serial.print("Starting fadeout at: ");
-
   Serial.print("Fade out time set to: ");
   Serial.print(fadeoutTime / (60 * 1000));
   Serial.println(" min");
