@@ -151,17 +151,9 @@ void setColor(uint8_t r, uint8_t g, uint8_t b)
 {
   uint32_t color = pixels1.Color(r, g, b, 0);
 
-  for (size_t i = 0; i < NUMPIXELS; i++)
-  {
-    colorMatrix1[i] = color;
-    colorMatrix1_new[i] = color;
-    colorMatrix2[i] = color;
-    colorMatrix2_new[i] = color;
-    colorMatrix3[i] = color;
-    colorMatrix3_new[i] = color;
-
-    show();
-  }
+  setColor(colorMatrix1, NUMPIXELS, r, g, b);
+  setColor(colorMatrix2, NUMPIXELS, r, g, b);
+  setColor(colorMatrix3, NUMPIXELS, r, g, b);
   show();
 }
 void toggle()

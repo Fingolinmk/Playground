@@ -103,7 +103,27 @@ void test_moveToRGB()
     TEST_ASSERT(test_color2.g == g - 1);
     TEST_ASSERT(test_color2.b == b - 1);
 }
+void test_setColor()
+{
 
+    int len = 24;
+    int16_t r = 100;
+    int16_t g = 200;
+    int16_t b = 140;
+    uint32_t test_Matrix1[len];
+
+    for (size_t i = 0; i < len; i++)
+    {
+        test_Matrix1[i] = 0;
+    }
+    setColor(test_Matrix1, len, r, g, b);
+    for (size_t i = 0; i < len; i++)
+    {
+        TEST_ASSERT(rgb(test_Matrix1[i]).r == r);
+        TEST_ASSERT(rgb(test_Matrix1[i]).g == g);
+        TEST_ASSERT(rgb(test_Matrix1[i]).b == b);
+    }
+}
 ////TODO:
 void test_get_packedRBG()
 {
@@ -181,6 +201,7 @@ int main(int argc, char **argv)
     RUN_TEST(test_checkRGBVals);
     RUN_TEST(test_setRGB);
     RUN_TEST(test_random_matrix);
+    RUN_TEST(test_setColor);
     UNITY_END();
 
     return 0;

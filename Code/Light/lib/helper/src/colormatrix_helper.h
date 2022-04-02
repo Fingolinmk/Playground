@@ -8,3 +8,12 @@ void random_matrix(uint32_t colorMatrix1[], size_t len)
         colorMatrix1[i] = rand(); // this is not really nice, since it overflows, which works, but it is probably not "random"
     }
 }
+
+void setColor(uint32_t colorMatrix1[], size_t len, int16_t r, int16_t g, int16_t b)
+{
+    uint32_t color = rgb(r, g, b).get_packedRGB();
+    for (size_t i = 0; i < len; i++)
+    {
+        colorMatrix1[i] = color;
+    }
+}
