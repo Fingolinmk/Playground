@@ -1,6 +1,4 @@
 #pragma once
-#include <Arduino.h>
-#include <TimeLib.h>
 
 class rgb
 {
@@ -71,16 +69,7 @@ public:
 
         return (uint32_t)((uint32_t)r << 16) | ((uint32_t)g << 8) | b;
     }
-    void printMe()
-    {
-        Serial.print("My Colors are ");
-        Serial.print("R: ");
-        Serial.print(r);
-        Serial.print(" G: ");
-        Serial.print(g);
-        Serial.print(" B: ");
-        Serial.println(b);
-    }
+
     uint32_t add_color(rgb color_to_add)
     {
 
@@ -164,41 +153,7 @@ uint32_t getStepsToZero(uint32_t colorMatrix1[], size_t len)
     for (size_t i = 0; i < len; i++)
     {
         rgb currentColor = rgb(colorMatrix1[i]);
-        ret += max(max(currentColor.r, currentColor.g), currentColor.b);
+        ret += std::max(std::max(currentColor.r, currentColor.g), currentColor.b);
     }
     return ret;
-}
-
-// Not used
-void fadeTo(uint32_t current_colorMatrix[], uint32_t stop_colorMatrix[], size_t len, int minutes, int seconds)
-{
-    Serial.print("Starttime: ");
-    Serial.println(now());
-
-    int endHour = hour();
-    int endMinutes = minutes;
-    int endSeconds = seconds;
-    if (seconds > 100)
-    {
-        int mins_fromseconds = seconds / 100;
-        endMinutes += mins_fromseconds;
-        endSeconds -= mins_fromseconds * 100;
-    }
-    if (minutes + minute() >= 60)
-    {
-        endHour += (minutes / 60) + 1;
-        endMinutes -= (minutes / 60) * 60;
-    }
-    Serial.print("Minutes: ");
-    Serial.print(minutes);
-    Serial.print(" seconds: ");
-    Serial.print(seconds);
-    Serial.println(" Endtime: ");
-
-    Serial.print("End Hour: ");
-    Serial.print(endHour);
-    Serial.print(" Minutes: ");
-    Serial.print(endMinutes);
-    Serial.println(" seconds: ");
-    Serial.print(endSeconds);
 }
