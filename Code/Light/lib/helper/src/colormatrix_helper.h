@@ -1,5 +1,7 @@
+#include <stdint.h>
+#include <cstddef>
 #include "rgb_lighthelper.h"
-
+#include <stdlib.h>
 /// Set every value of the color matrix to a random value
 void random_matrix(uint32_t colorMatrix1[], size_t len)
 {

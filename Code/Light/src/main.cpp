@@ -8,6 +8,7 @@
 
 #include <helper.h>
 #include <rgb_lighthelper.h>
+#include <colormatrix_helper.h>
 
 #include <NTPClient.h> //TODO support daylight saving time
 #include <WiFiUdp.h>
@@ -149,8 +150,6 @@ void fadeIn(int dT)
 // set RGB color to all LEDs
 void setColor(uint8_t r, uint8_t g, uint8_t b)
 {
-  uint32_t color = pixels1.Color(r, g, b, 0);
-
   setColor(colorMatrix1, NUMPIXELS, r, g, b);
   setColor(colorMatrix2, NUMPIXELS, r, g, b);
   setColor(colorMatrix3, NUMPIXELS, r, g, b);
