@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <cstddef>
-#include "rgb_lighthelper.h"
+#include "rgb_lighthelper.hpp"
 #include <stdlib.h>
 /// Set every value of the color matrix to a random value
 void random_matrix(uint32_t colorMatrix1[], size_t len)
@@ -32,5 +32,14 @@ void toggle_RGB(uint32_t colorMatrix[], size_t len, uint8_t R, uint8_t G, uint8_
         }
         else
             colorMatrix[i] = color.get_packedRGB();
+    }
+}
+
+void setNewColorMatricesToRGB(uint32_t colorMatrix_new[], uint8_t R, uint8_t G, uint8_t B, size_t numpixels)
+{
+    rgb Color(R, G, B);
+    for (size_t i = 0; i < numpixels; i++)
+    {
+        colorMatrix_new[i] = Color.get_packedRGB();
     }
 }

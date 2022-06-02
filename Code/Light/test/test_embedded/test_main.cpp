@@ -2,8 +2,8 @@
 
 #include <Arduino.h>
 #include <unity.h>
-#include "helper.h"
-#include "rgb_lighthelper.h"
+#include "helper.hpp"
+#include "rgb_lighthelper.hpp"
 
 void test_fadeTo()
 {
@@ -22,9 +22,6 @@ void setup()
     delay(2000);
     Serial.begin(9600);
     UNITY_BEGIN(); // IMPORTANT LINE!
-
-    RUN_TEST(testRGBClass);
-    RUN_TEST(testBudget);
 }
 
 void loop()

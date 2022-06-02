@@ -6,9 +6,9 @@
 
 #define NUMPIXELS 24
 
-#include <helper.h>
-#include <rgb_lighthelper.h>
-#include <colormatrix_helper.h>
+#include <helper.hpp>
+#include <rgb_lighthelper.hpp>
+#include <colormatrix_helper.hpp>
 
 #include <NTPClient.h> //TODO support daylight saving time
 #include <WiFiUdp.h>
@@ -57,16 +57,6 @@ int Alarm_minutes = 0;
 
 int fadeoutTime = 1 * 60 * 1000; // 1 min default
 
-void setNewColorMatricesToRGB(uint8_t R, uint8_t G, uint8_t B)
-{
-  rgb Color(R, G, B);
-  for (size_t i = 0; i < NUMPIXELS; i++)
-  {
-    colorMatrix1_new[i] = Color.get_packedRGB();
-    colorMatrix2_new[i] = Color.get_packedRGB();
-    colorMatrix3_new[i] = Color.get_packedRGB();
-  }
-}
 void show()
 {
   for (size_t i = 0; i < NUMPIXELS; i++)
@@ -458,38 +448,45 @@ void loop()
       setColor(1, 0, 0);
       delay(del);
 
-      Serial.println("20,1,0");
-      setNewColorMatricesToRGB(20, 1, 0);
+      setNewColorMatricesToRGB(colorMatrix1_new, 20, 1, 0, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix2_new, 20, 1, 0, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix3_new, 20, 1, 0, NUMPIXELS);
       fadeIn(del);
       Serial.println(timeClient.getFormattedTime());
 
-      Serial.println("20,10,5");
-      setNewColorMatricesToRGB(20, 10, 5);
+      setNewColorMatricesToRGB(colorMatrix1_new, 20, 10, 5, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix2_new, 20, 10, 5, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix3_new, 20, 10, 5, NUMPIXELS);
       fadeIn(del);
       Serial.println(timeClient.getFormattedTime());
 
-      Serial.println("100,15,7");
-      setNewColorMatricesToRGB(100, 15, 7);
+      setNewColorMatricesToRGB(colorMatrix1_new, 100, 15, 7, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix2_new, 100, 15, 7, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix3_new, 100, 15, 7, NUMPIXELS);
       fadeIn(del);
       Serial.println(timeClient.getFormattedTime());
 
-      Serial.println("150,16,8");
-      setNewColorMatricesToRGB(150, 16, 8);
+      setNewColorMatricesToRGB(colorMatrix1_new, 150, 16, 8, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix2_new, 150, 16, 8, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix3_new, 150, 16, 8, NUMPIXELS);
       fadeIn(del);
       Serial.println(timeClient.getFormattedTime());
 
-      Serial.println("200,20,10");
-      setNewColorMatricesToRGB(200, 20, 10);
+      setNewColorMatricesToRGB(colorMatrix1_new, 200, 20, 10, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix2_new, 200, 20, 10, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix3_new, 200, 20, 10, NUMPIXELS);
       fadeIn(del);
       Serial.println(timeClient.getFormattedTime());
 
-      Serial.println("254,100,15");
-      setNewColorMatricesToRGB(255, 100, 15);
+      setNewColorMatricesToRGB(colorMatrix1_new, 255, 100, 15, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix2_new, 255, 100, 15, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix3_new, 255, 100, 15, NUMPIXELS);
       fadeIn(del);
       Serial.println(timeClient.getFormattedTime());
 
-      Serial.println("255,150,20");
-      setNewColorMatricesToRGB(255, 150, 20);
+      setNewColorMatricesToRGB(colorMatrix1_new, 255, 150, 20, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix2_new, 255, 150, 20, NUMPIXELS);
+      setNewColorMatricesToRGB(colorMatrix3_new, 255, 150, 20, NUMPIXELS);
       fadeIn(del);
       Serial.println(timeClient.getFormattedTime());
 

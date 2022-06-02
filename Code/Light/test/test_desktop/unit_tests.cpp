@@ -1,7 +1,7 @@
 #include <unity.h>
 #include <iostream>
-#include "rgb_lighthelper.h"
-#include "colormatrix_helper.h"
+#include "rgb_lighthelper.hpp"
+#include "colormatrix_helper.hpp"
 
 void testRGBClass()
 {
