@@ -205,16 +205,16 @@ function App() {
           </Paragraph>
           <Carousel style={{ width: '600px', margin: '0 auto' }} autoplay>
             <div className='center' >
-              <img style={contentStyle} alt="The Circuit" src="https://raw.githubusercontent.com/Fingolinmk/Playground/main/docs/img/circuit.png"></img>
+              <img style={contentStyle} alt="The Circuit" src={process.env.PUBLIC_URL + "/img/circuit.png"}></img>
             </div>
             <div>
-              <img style={contentStyle} alt="The Layout" src="https://raw.githubusercontent.com/Fingolinmk/Playground/main/docs/img/Layout.png"></img>
+              <img style={contentStyle} alt="The Layout" src={process.env.PUBLIC_URL + "/img/Layout.png"}></img>
             </div>
             <div>
-              <img style={contentStyle} alt="The PCB" src="https://raw.githubusercontent.com/Fingolinmk/Playground/main/docs/img/pcb.jpg"></img>
+              <img style={contentStyle} alt="The PCB" src={process.env.PUBLIC_URL + "/img/pcb.jpg"}></img>
             </div>
             <div>
-              <img style={contentStyle} alt="The PCB" src="https://raw.githubusercontent.com/Fingolinmk/Playground/main/docs/img/PCB's.jpg"></img>
+              <img style={contentStyle} alt="The PCB" src={process.env.PUBLIC_URL + "/img/PCB's.jpg"}></img>
             </div>
 
           </Carousel>
