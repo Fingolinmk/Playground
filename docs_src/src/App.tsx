@@ -38,6 +38,7 @@ function STL(props: any) {
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
 
+
   return (
     <div>
 
@@ -84,6 +85,7 @@ function App() {
   const [helper, setHelper] = useState("Loading..");
   const [rgb_lighthelper, setRgb_lighthelper] = useState("Loading..");
   const [colormatrix_helper, setColormatrix_helper] = useState("Loading..");
+  const [collapsed, setCollapsed] = useState(false);
   useEffect(() => {
 
     const fetchData = async () => {
@@ -180,7 +182,7 @@ function App() {
     <Layout>
       <Header >Header</Header>
       <Layout>
-        <Sider width={200} className="site-layout-background" theme='light'>
+        <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} width={200} className="site-layout-background" theme='light'>
 
           <Anchor>
             <Link href="#Introduction" title="Introduction" />
@@ -204,8 +206,9 @@ function App() {
           <ul>
             <li>docs</li>
             <li>docs_src</li>
-            <li>Electronics</li>
+            <li>electronics</li>
             <li>firmware</li>
+            <li>flutter_app</li>
             <li>housing</li>
           </ul>
           <Title id="Hardware"> Hardware</Title>
