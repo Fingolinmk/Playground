@@ -74,7 +74,6 @@ function STL(props: any) {
 function App() {
   const contentStyle: React.CSSProperties = {
     height: '500px',
-    //width: '500px',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
@@ -198,6 +197,17 @@ function App() {
           <Paragraph>
             This project is a demo to play with various technologie, such as µC Programming, MQTT, Node-Red. Therefore I created a light that is based on an ESP32, programmed with Arduino/PlatformIO. This lamp has three "panels" with 24 LED's, totaling 72 LEDs. All LED's are WS2812 and are therefore individually adressable. It keeps track of the time, using NTP. The device can be controlled via custom MQTT commands. These command can be triggered using for example a simple Node-Red Dashboard, which can be accessed with any browser.
           </Paragraph>
+          < Title level={2}>Folder Structure</Title>
+          <Paragraph>
+            All files (are supposed to be) / are included in this repository, including the source file to this documentation. The folders are structured into.
+          </Paragraph>
+          <ul>
+            <li>docs</li>
+            <li>docs_src</li>
+            <li>Electronics</li>
+            <li>firmware</li>
+            <li>housing</li>
+          </ul>
           <Title id="Hardware"> Hardware</Title>
           <Title id="Electronics" level={2}> Electronics</Title>
           <Paragraph>
