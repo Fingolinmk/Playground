@@ -89,14 +89,14 @@ function App() {
   useEffect(() => {
 
     const fetchData = async () => {
-      const main_code = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/src/main.cpp")
+      const main_code = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/firmware/Light/src/main.cpp")
       setMain(main_code);
-      const heper_code = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/lib/helper/src/helper.hpp")
+      const heper_code = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/firmware/Light/lib/helper/src/helper.hpp")
       setHelper(heper_code);
-      const lighthelper_code = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/lib/helper/src/rgb_lighthelper.hpp")
+      const lighthelper_code = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/firmware/Light/lib/helper/src/rgb_lighthelper.hpp")
       setRgb_lighthelper(lighthelper_code);
 
-      const colMatrixhelpr = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/Code/Light/lib/helper/src/colormatrix_helper.hpp")
+      const colMatrixhelpr = await loadData("https://raw.githubusercontent.com/Fingolinmk/Playground/main/firmware/Light/lib/helper/src/colormatrix_helper.hpp")
       setColormatrix_helper(colMatrixhelpr);
     }
     fetchData();
