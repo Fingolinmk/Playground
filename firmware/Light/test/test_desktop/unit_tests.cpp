@@ -169,7 +169,7 @@ void test_random_matrix()
     for (size_t i = 0; i < len; i++)
     {
         rgb color = rgb(test_Matrix1[i]);
-        if (!test_Matrix1[i] == test_Matrix2[i])
+        if (test_Matrix1[i] != test_Matrix2[i])
             noChange = false;
         TEST_ASSERT(color.r < 255 && color.r >= 0);
         TEST_ASSERT(color.g < 255 && color.b >= 0);

@@ -183,7 +183,6 @@ function App() {
       <Header >Header</Header>
       <Layout>
         <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} width={200} className="site-layout-background" theme='light'>
-
           <Anchor>
             <Link href="#Introduction" title="Introduction" />
             <Link href="#Hardware" title="Hardware" >
