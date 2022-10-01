@@ -81,6 +81,14 @@ function App() {
     background: '#364d79',
     alignContent: 'center',
   };
+  const contentStylePortait: React.CSSProperties = {
+    height: '700px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+    alignContent: 'center',
+  };
   const [main, setMain] = useState("Loading..");
   const [helper, setHelper] = useState("Loading..");
   const [rgb_lighthelper, setRgb_lighthelper] = useState("Loading..");
@@ -323,9 +331,31 @@ function App() {
 
 
           <Title id="Node-Red Dashboard" level={2}>Node-Red Dashboard</Title>
-          To control the lamp a simple Node Red Dashboard can be used, see <a href="https://flows.nodered.org/node/node-red-dashboard">node-red-dashboard</a>. For the future I plan to build a simple Flutter App that can do the same.
+          To control the lamp a simple Node Red Dashboard can be used, see <a href="https://flows.nodered.org/node/node-red-dashboard">node-red-dashboard</a>.
           <Title id="Flutter App">Flutter App </Title>
+          The app can also be controlled by the Flutter App which is shown below.
 
+          <img style={contentStylePortait} alt="Full Dashboard" src={process.env.PUBLIC_URL + "/img/App/full_dashboard.png"}></img>
+
+          <Carousel style={{ width: '600px', margin: '0 auto' }} autoplay>
+            <div className='center' >
+              <img style={contentStylePortait} alt="Empty Dashboard" src={process.env.PUBLIC_URL + "/img/App/empty.png"}></img>
+            </div>
+            <div className='center' >
+              <img style={contentStylePortait} alt="Edit Connection" src={process.env.PUBLIC_URL + "/img/App/edit_connection.png"}></img>
+            </div>
+            <div className='center' >
+              <img style={contentStylePortait} alt="Add Toggle Button" src={process.env.PUBLIC_URL + "/img/App/add_toggle.png"}></img>
+            </div>
+            <div className='center' >
+              <img style={contentStylePortait} alt="Add RGB Button" src={process.env.PUBLIC_URL + "/img/App/add_rgb.png"}></img>
+            </div>
+            <div className='center' >
+              <img style={contentStylePortait} alt="Full Dashboard" src={process.env.PUBLIC_URL + "/img/App/full_dashboard.png"}></img>
+            </div>
+
+
+          </Carousel>
         </Content></Layout>
       <Footer ></Footer>
     </Layout >
