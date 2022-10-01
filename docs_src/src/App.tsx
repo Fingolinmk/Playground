@@ -335,7 +335,6 @@ function App() {
           <Title id="Flutter App">Flutter App </Title>
           The app can also be controlled by the Flutter App which is shown below.
 
-          <img style={contentStylePortait} alt="Full Dashboard" src={process.env.PUBLIC_URL + "/img/App/full_dashboard.png"}></img>
 
           <Carousel style={{ width: '600px', margin: '0 auto' }} autoplay>
             <div className='center' >
