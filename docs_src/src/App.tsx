@@ -117,6 +117,36 @@ function App() {
     }
     return ('Error loading.');
   }
+
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 620;
+
+  useEffect(() => {
+    /* Inside of a "useEffect" hook add an event listener that updates
+       the "width" state variable when the window size changes */
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+
+    /* passing an empty array as the dependencies of the effect will cause this
+       effect to only run when the component mounts, and not each time it updates.
+       We only want the listener to be added once */
+  }, []);
+
+  const showSider = (): any => {
+    return width < breakpoint ? <p /> : <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} width={200} className="site-layout-background" theme='light'>
+
+      <Anchor>
+        <Link href="#Introduction" title="Introduction" />
+        <Link href="#Hardware" title="Hardware" >
+          <Link href="#Electronics" title="Electronics" />
+          <Link href="#Housing" title="Housing" />
+        </Link>
+        <Link href="#Firmware" title="Firmware" />
+        <Link href="#Software" title="Software" />
+      </Anchor>
+    </Sider>;
+  }
+
+
   const dataSource = [
     {
       key: '1',
@@ -190,17 +220,7 @@ function App() {
     <Layout>
       <Header >Header</Header>
       <Layout>
-        <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} width={200} className="site-layout-background" theme='light'>
-          <Anchor>
-            <Link href="#Introduction" title="Introduction" />
-            <Link href="#Hardware" title="Hardware" >
-              <Link href="#Electronics" title="Electronics" />
-              <Link href="#Housing" title="Housing" />
-            </Link>
-            <Link href="#Firmware" title="Firmware" />
-            <Link href="#Software" title="Software" />
-          </Anchor>
-        </Sider>
+        {showSider()}
         <Content className='content'>
           <Title id="Introduction">Introduction</Title>
           <Paragraph>
