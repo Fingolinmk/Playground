@@ -103,7 +103,10 @@ function App() {
   }
 
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 620;
+
+
+  const breakpoint = 600;
+
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -112,8 +115,20 @@ function App() {
 
 
   }, []);
+  const getHeight1 = (): number => {
+    if (width < 800)
+      return 400
+    if (width < 700)
+      return 350
+    if (width < 600)
+      return 300;
+    return 500;
+  }
+  const getHeight2 = (): number => {
+    return width < breakpoint ? 500 : 700;
+  }
   const contentStyle: React.CSSProperties = {
-    height: '500px',
+    height: getHeight1(),
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
@@ -121,7 +136,7 @@ function App() {
     alignContent: 'center',
   };
   const contentStylePortait: React.CSSProperties = {
-    height: '700px',
+    height: getHeight2(),
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
