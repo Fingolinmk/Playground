@@ -73,22 +73,6 @@ function STL(props: any) {
 
 
 function App() {
-  const contentStyle: React.CSSProperties = {
-    height: '500px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-    alignContent: 'center',
-  };
-  const contentStylePortait: React.CSSProperties = {
-    height: '700px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-    alignContent: 'center',
-  };
   const [main, setMain] = useState("Loading..");
   const [helper, setHelper] = useState("Loading..");
   const [rgb_lighthelper, setRgb_lighthelper] = useState("Loading..");
@@ -119,17 +103,46 @@ function App() {
   }
 
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 620;
+
+
+  const breakpoint = 600;
+
 
   useEffect(() => {
-    /* Inside of a "useEffect" hook add an event listener that updates
-       the "width" state variable when the window size changes */
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth);
+    })
 
-    /* passing an empty array as the dependencies of the effect will cause this
-       effect to only run when the component mounts, and not each time it updates.
-       We only want the listener to be added once */
+
   }, []);
+  const getHeight1 = (): number => {
+    if (width < 800)
+      return 400
+    if (width < 700)
+      return 350
+    if (width < 600)
+      return 300;
+    return 500;
+  }
+  const getHeight2 = (): number => {
+    return width < breakpoint ? 500 : 700;
+  }
+  const contentStyle: React.CSSProperties = {
+    height: getHeight1(),
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+    alignContent: 'center',
+  };
+  const contentStylePortait: React.CSSProperties = {
+    height: getHeight2(),
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+    alignContent: 'center',
+  };
 
   const showSider = (): any => {
     return width < breakpoint ? <p /> : <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} width={200} className="site-layout-background" theme='light'>
